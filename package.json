@@ -1,0 +1,16 @@
+{
+  "name": "aimee-game",
+  "scripts": {
+    "watch": "onchange 'src/js/*.js' 'src/js/**/*.js' -- npm run build",
+    "prestart": "npm run build",
+    "start": "npm run watch & npm run localhost",
+    "localhost": "browser-sync start --files='index.html, bundle.js' --server",
+    "build": "browserify src/js/base.js -t babelify > bundle.js"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.3",
+    "browser-sync": "^2.8.1",
+    "browserify": "^11.0.0",
+    "onchange": "^1.1.0"
+  }
+}
